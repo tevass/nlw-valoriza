@@ -4,7 +4,7 @@ import { v4 as uuid } from 'uuid'
 @Entity('users')
 class User {
 
-    @PrimaryColumn('uuid')
+    @PrimaryColumn()
     readonly id: string;
 
     @Column()
@@ -15,6 +15,9 @@ class User {
     
     @Column()
     admin: boolean;
+
+    @Column()
+    password: string;
 
     @CreateDateColumn()
     created_at: Date;
